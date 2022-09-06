@@ -16,7 +16,7 @@
         <ApplicationTitle>KnitAssistant</ApplicationTitle>
 
         <!-- App Identifier -->
-        <ApplicationId>com.companyname.knitassistant</ApplicationId>
+        <ApplicationId>knitassistant</ApplicationId>
         <ApplicationIdGuid>673DDB36-6B4E-4E9F-840D-5542AD2C47C4</ApplicationIdGuid>
 
         <!-- Versions -->
