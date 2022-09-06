@@ -1,0 +1,31 @@
+﻿@page "/startoe"
+
+<h1>Sternchenspitzenreihen</h1>
+<input type="number" @bind="@Stitches" @bind:event="oninput" />
+<button class="btn btn-primary" @onclick="CalcRowsStar">Reihen berechnen</button>
+<p role="status">Die Sternchenspitze wird @Reihen Reihen lang werden.</p>
+
+@code
+{
+
+    private int Stitches { get; set; }
+    private int Reihen = 0;
+    private void CalcRowsStar()
+    {
+        Reihen = 0;
+        int maschenZahl = Stitches / 4;
+        while (maschenZahl >= 4)
+        {
+            if (maschenZahl % 2 == 0)
+            {
+                Reihen += maschenZahl / 2 - 1;
+                maschenZahl -= 2;
+            }
+            else
+            {
+                Reihen += ((maschenZahl + 1) / 2 - 1) / 2;
+                maschenZahl--;
+            }
+        }
+    }
+}
