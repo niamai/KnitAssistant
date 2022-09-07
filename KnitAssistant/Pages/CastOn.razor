@@ -1,0 +1,22 @@
+﻿@page "/cast-on"
+
+<h1>Maschenaufnahme</h1>
+<div class="flex-column gap-1 align-items-center">
+    <p>Für ein elastisches Bündchen, nimm 50% mehr Maschen auf.</p>
+    <p>Wie soll die Gesamtmaschenzahl der Socke sein?</p>
+    <input type="number" @bind="@Stitches" @bind:event="oninput" />
+    <button class="btn btn-primary" @onclick="CalcCastOn">Aufnahmemaschen berechnen</button>
+    <p>Nimm @StitchesToCast Maschen auf und stricke in der ersten Runde eine Masche rechts, und jede zweite und dritte Masche links zusammen.</p>
+</div>
+
+
+@code
+{
+
+    private int Stitches { get; set; }
+    private int StitchesToCast = 0;
+    private void CalcCastOn()
+    {
+        StitchesToCast = Stitches / 2 * 3;
+    }
+}
